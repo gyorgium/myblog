@@ -1,0 +1,9 @@
+body {
+    padding-top: 4.5rem;
+    min-height: 75rem;
+}
+
+/* Navbar background color */
+.bd-navbar {
+    background-color: #2b5b84;
+}
