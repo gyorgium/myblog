@@ -8,4 +8,4 @@ The following acknowledgements pertain to this software license.
 
 ## Main components used by **myblog**
 These components are installed via `pip` package-management system.
-You can check all the dependencies using the instructions from the *requirements.txt* file dynamically referenced via pip.
+You can check all the dependencies using the instructions from the [*requirements.txt*](./requirements.txt) file dynamically referenced via `pip`.
