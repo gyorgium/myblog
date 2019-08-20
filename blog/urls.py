@@ -8,4 +8,7 @@ urlpatterns = [
     path('post/<slug:slug>/', views.PostDetailView.as_view(), name='post_detail'),
     path('posts/', views.AllPostListView.as_view(), name='all_post_list'),
     path('summernote/', include('django_summernote.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # TODO remove on live
+]
+
+if settings.DEBUG:
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
