@@ -1,15 +1,15 @@
-from django.forms import forms
+from django import forms
 from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('author','title', 'text',)
+        fields = ('author','title', 'content',)
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'textinputclass'}),
-            'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'}),
+            'content': forms.Textarea(attrs={'class': 'editable medium-editor-textarea postcontent'}),
         }
 
 
