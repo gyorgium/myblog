@@ -23,6 +23,7 @@ class Post(models.Model):
 
     def publish(self):
         self.published_on = timezone.now()
+        self.status = 1
         self.save()
 
     def get_approved_comments(self):
