@@ -1,13 +1,19 @@
+html { height: 100%; }
+
 body {
     padding-top: 4.5rem;
-    min-height: 75rem;
+    padding-bottom: 2.5rem;
+    position: relative;
+    min-height: 100%;
 }
 
-/* Navbar background color */
-.bd-navbar, footer {
-    background-color: #2b5b84;
+/* main background color */
+.navbar, footer {
+    background-color: #202c39;
 }
 
 footer {
-    min-height: 2rem;
+    position: absolute;
+    left: 0 ; right: 0; bottom: 0;
+    height: 2.5rem;
 }
