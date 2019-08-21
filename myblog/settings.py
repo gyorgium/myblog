@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'D:/engineering/programming/workspace/myblogstatic/media/') # TODO edit this line when goin live
+
+LOGIN_REDIRECT_URL = '/'
