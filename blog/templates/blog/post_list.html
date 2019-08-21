@@ -1,18 +1,28 @@
 {% extends 'blog/base.html' %}
+
 {% block content %}
+<!-- article entries -->
   <div class="row">
-    <!-- blog entries column -->
     <div class="col-md-8">
       {% for post in post_list %}
-        <div class="card mb-3">
+      {% if post.status == 1 and post.published_on  %}
+        <div class="card mb-4 border-top-0 border-right-0">
           <div class="card-body">
+            <p class="card-text">
+              <strong>Article</strong>
+              <time class="text-muted">{{ post.published_on | date:"M d, Y"}}</time>
+            </p>
             <h2 class="card-title">{{ post.title }}</h2>
-            <p class="card-text">{{ post.author }} | {{ post.created_on}} </p>
-            <p class="card-text">{{ post.content|slice:':200' }}</p>
-            <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+            <p class="card-text">{{ post.content | truncatechars_html:200 | safe }}&hellip;</p>
+            <p class="card-text">
+              <a href="{% url 'post_detail' slug=post.slug %}" class="text-info">Read article</a>
+            </p>
           </div>
         </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
+<!-- article entries end -->
+
 {% endblock %}
