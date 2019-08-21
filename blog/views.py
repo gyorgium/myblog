@@ -37,17 +37,17 @@ class PostDetailView(DetailView):
 
 class DeletePostView(LoginRequiredMixin, DeleteView):
     model = Post
-    success_url = reverse_lazy('post_list')
+    success_url = reverse_lazy('home')
 
 class DraftListView(LoginRequiredMixin, ListView):
-    template_name='post_list.html'
+    template_name='post_draft_list.html'
 
     def get_queryset(self):
         return Post.objects.filter(status=0).order_by('-created_on')
 
-#######################################
-## Functions that require a slug match ##
-#######################################
+###############################################
+## Functions that require a slug or pk match ##
+###############################################
 
 @login_required
 def publish_post(request, slug):
