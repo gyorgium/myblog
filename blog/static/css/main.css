@@ -4,6 +4,10 @@ body {
 }
 
 /* Navbar background color */
-.bd-navbar {
+.bd-navbar, footer {
     background-color: #2b5b84;
+}
+
+footer {
+    min-height: 2rem;
 }
