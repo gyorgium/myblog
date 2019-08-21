@@ -2,7 +2,7 @@ html { height: 100%; }
 
 body {
     padding-top: 4.5rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 3rem;
     position: relative;
     min-height: 100%;
 }
@@ -15,5 +15,6 @@ body {
 footer {
     position: absolute;
     left: 0 ; right: 0; bottom: 0;
-    height: 2.5rem;
+    height: 3rem;
+    padding-top: 0.5rem;
 }
