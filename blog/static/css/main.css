@@ -18,3 +18,11 @@ footer {
     height: 3rem;
     padding-top: 0.5rem;
 }
+
+.post-date {
+    font-size: .75rem;
+}
+
+.post a:hover {
+    text-decoration: none !important;
+}
