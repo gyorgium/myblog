@@ -8,8 +8,9 @@ body {
 }
 
 /* main background color */
-.navbar, footer {
+.navbar, footer, .btn-primary {
     background-color: #202c39;
+    border-color: #202c39;
 }
 
 footer {
@@ -19,7 +20,7 @@ footer {
     padding-top: 0.5rem;
 }
 
-.post-date {
+.text-muted {
     font-size: .75rem;
 }
 

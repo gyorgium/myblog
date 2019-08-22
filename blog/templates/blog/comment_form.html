@@ -1,10 +1,14 @@
 {% extends 'blog/base.html' %}
-
+{% load bootstrap4 %}
 {% block content %}
-    <h1>New comment</h1>
+  <div class="container col-md-8">
+    <h1>Create new comment</h1>
     <form method="POST" class="post-form">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit" class="save btn btn-default">Post Comment</button>
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+        <button type="submit" class="save btn btn-primary">Post Comment</button>
+      {% endbuttons %}
     </form>
+  </div>
 {% endblock %}

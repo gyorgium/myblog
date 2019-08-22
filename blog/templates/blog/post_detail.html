@@ -18,7 +18,7 @@
         {{ post.published_on }}
       </div>
     {% else %}
-      <a class="btn btn-default" href="{% url 'post_publish' slug=post.slug %}">Publish</a>
+      <a class="btn btn-primary" href="{% url 'post_publish' slug=post.slug %}">Publish</a>
     {% endif %}
       <p class='postcontent' >{{ post.content | safe | linebreaksbr }}</p>
 
@@ -33,16 +33,16 @@
     {% for comment in post.comments.all %}
       <br>
       {% if user.is_authenticated or comment.approved %}
-        {{ comment.created_on }}
+        <p><strong>{{ comment.author }}</strong></p>
+        <p class="text-muted">{{ comment.created_on | date:"M d, Y" }}</p>
         {% if not comment.approved %}
-          <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">Remove comment</a>
-          <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">Approve comment</a>
+          <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk %}">Remove comment</a>
+          <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}">Approve comment</a>
         {% endif %}
           <p>{{ comment.text | safe | linebreaks }}</p>
-          <p>Posted by: <strong>{{ comment.author }}</strong></p>
       {% endif %}
     {% empty %}
-      <p>No comments posted.</p>
+      <p class="text-muted">No comments yet.</p>
     {% endfor %}
   </div>
 {% endblock %}

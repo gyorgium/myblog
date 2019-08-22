@@ -10,7 +10,7 @@
           <div class="card-body">
             <p class="card-text">
               <strong>Article</strong>
-              <time class="text-muted post-date"> / {{ post.published_on | date:"M d, Y"}}</time>
+              <time class="text-muted"> / {{ post.published_on | date:"M d, Y"}}</time>
             </p>
             <h2 class="card-title">
               <a href="{% url 'post_detail' slug=post.slug %}" class="text-dark">{{ post.title }}</a>
