@@ -1,32 +1,35 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
 <!-- post entries -->
+<div class="container">
   <div class="row">
     <div class="col-md-8 post">
       {% for post in post_list %}
-      {% if post.status == 1 and post.published_on  %}
-        <div class="card mb-4 border-top-0 border-right-0">
-          <div class="card-body">
-            <p class="card-text">
-              <strong>Article</strong>
-              <time class="text-muted"> / {{ post.published_on | date:"M d, Y"}}</time>
-            </p>
-            <h2 class="card-title">
-              <a href="{% url 'post_detail' slug=post.slug %}" class="text-dark">{{ post.title }}</a>
-            </h2>
-            <p class="card-text">
-              <a href="{% url 'post_detail' slug=post.slug %}" class="text-dark">{{ post.content | truncatechars_html:200 | safe }}&hellip;</a>
-            </p>
-            <p class="card-text">
-              <a href="{% url 'post_detail' slug=post.slug %}" class="text-info float-right"><u>Read article</u></a>
-            </p>
+        {% if post.status == 1 and post.published_on  %}
+          <div class="card mb-4 border-top-0 border-right-0">
+            <div class="card-body">
+              <p class="card-text">
+                <strong>Article</strong>
+                <time class="text-muted"> / {{ post.published_on | date:"M d, Y"}}</time>
+              </p>
+              <h2 class="card-title">
+                <a href="{% url 'post_detail' slug=post.slug %}" class="text-dark">{{ post.title }}</a>
+              </h2>
+              <p class="card-text">
+                <a href="{% url 'post_detail' slug=post.slug %}" class="text-dark">{{ post.content | truncatechars_html:200 | safe }}&hellip;</a>
+              </p>
+              <p class="card-text">
+                <a href="{% url 'post_detail' slug=post.slug %}" class="text-info float-right"><u>Read article</u></a>
+              </p>
+            </div>
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
   </div>
+</div>
 <!-- post entries end -->
 
 {% endblock %}
