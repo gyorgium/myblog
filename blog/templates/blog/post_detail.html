@@ -27,7 +27,7 @@
       <a class="btn btn-primary" href="{% url 'post_delete' slug=post.slug %}">Delete</a>
     {% endif %}
 
-  <hr>
+  {% comment %} <hr>
   <a class="btn btn-primary btn-comment" href="{% url 'add_post_comment' slug=post.slug %}">Add comment</a>
   <div class="container">
     {% for comment in post.comments.all %}
@@ -44,5 +44,5 @@
     {% empty %}
       <p class="text-muted">No comments yet.</p>
     {% endfor %}
-  </div>
+  </div> {% endcomment %}
 {% endblock %}
