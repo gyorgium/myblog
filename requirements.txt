@@ -1,4 +1,4 @@
-Django==2.2.4
+Django==2.2.22
 django-bootstrap4==0.0.8
 django-js-asset==1.2.2
 django-summernote==0.8.11.4
